@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<department name="Wydział Architektury" establishment-year="1948">
+    <faculty>Architektura i urbanistyka</faculty>
+    <faculty>Gospodarka przestrzenna</faculty>
+</department>
+
+<department name="Wydział Budownictwa Lądowego i Wodnego" establishment-year="1948">
+    <faculty>Budownictwo</faculty>
+</department>
+
+<department name="Wydział Chemiczny" establishment-year="1948">
+    <faculty>Biotechnologia</faculty>
+    <faculty>Chemia</faculty>
+    <faculty>Inżynieria chemiczna i procesowa</faculty>
+    <faculty>Inżynieria materiałowa</faculty>
+    <faculty>Technologia chemiczna</faculty>
+</department>
+
+<department name="Wydział Elektroniki" establishment-year="1948">
+    <faculty>Automatyka i robotyka</faculty>
+    <faculty>Elektronika</faculty>
+    <faculty>Telekomunikacja</faculty>
+    <faculty>Informatyka</faculty>
+    <faculty>Teleinformatyka</faculty>
+</department>
+
+<department name="Wydział Elektryczny" establishment-year="1948">
+    <faculty>Automatyka i robotyka</faculty>
+    <faculty>Elektrotechnika</faculty>
+    <faculty additional="kierunek międzywydziałowy">Mechatronika</faculty>
+</department>
+
+<department name="Wydział Geoinżynierii, Górnictwa i Geologii" establishment-year="1948">
+    <faculty>Geodezja i kartografia</faculty>
+    <faculty>Górnictwo i geologia</faculty>
+</department>
+
+<department name="Wydział Inżynierii Środowiska" establishment-year="1948">
+    <faculty>Inżynieria środowiska</faculty>
+    <faculty>Ochrona środowiska</faculty>
+</department>
+
+<department name="Wydział Informatyki i Zarządzania" establishment-year="1948">
+    <faculty>Informatyka</faculty>
+    <faculty>Inżynieria systemów</faculty>
+    <faculty>Zarządzanie</faculty>
+</department>
+
+<department name="Wydział Mechaniczno-Energetyczny" establishment-year="1948">
+    <faculty>Energetyka</faculty>
+    <faculty>Mechanika i budowa maszyn</faculty>
+</department>
+
+<department name="Wydział Mechaniczny" establishment-year="1948">
+    <faculty>Automatyka i robotyka</faculty>
+    <faculty>Inżynieria biomedyczna</faculty>
+    <faculty>Mechanika i budowa maszyn</faculty>
+    <faculty additional="kierunek międzywydziałowy">Mechatronika</faculty>
+    <faculty>Transport</faculty>
+    <faculty>Zarządzanie i inżynieria produkcji</faculty>
+</department>
+
+<department name="Wydział Podstawowych Problemów Techniki" establishment-year="1948">
+    <faculty>Fizyka</faculty>
+    <faculty>Fizyka techniczna</faculty>
+    <faculty>Informatyka</faculty>
+    <faculty>Inżynieria biomedyczna</faculty>
+    <faculty>Matematyka</faculty>
+    <faculty>Matematyka stosowana</faculty>
+    <faculty>Optyka</faculty>
+</department>
+
+<department name="Wydział Elektroniki Mikrosystemów i Fotoniki" establishment-year="1948">
+    <faculty>Elektronika i telekomunikacja</faculty>
+    <faculty additional="kierunek międzywydziałowy">Mechatronika</faculty>
+</department>

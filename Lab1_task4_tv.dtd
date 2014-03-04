@@ -1,0 +1,12 @@
+<!ELEMENT tvschedule (channel+|error) >
+<!ELEMENT channel (banner, day*) >
+<!ATTRLIST chan IDREF #REQUIRED >
+	<!ELEMENT banner (#PCDATA) >
+	<!ELEMENT day (date, programslot+) >
+		<!ELEMENT date (#PCDATA) >
+	<!ELEMENT programslot (time, title, description?)
+		<!ELEMENT time (#PCDATA) >
+		<!ELEMENT title (#PCDATA) >
+			<!ATTRLIST title language #IMPLIED >
+			<!ATTRLIST title rating #IMPLIED >
+		<!ELEMENT description (#PCDATA) >

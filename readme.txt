@@ -1,0 +1,1 @@
+In order to parse those files, Notepad++ with XML Tools is required.

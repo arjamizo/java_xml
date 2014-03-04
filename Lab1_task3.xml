@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees SYSTEM "Lab1_task3.dtd">
+<memories> 
+	<memory tapeid="20">
+		<media mediaid="20"/> 
+		<subdate>Feb 2, 2014</subdate>
+		<donor>Artur Z.</donor>
+		<subject>Laboratory notes</subject>
+		<subject><![CDATA[ Learned <xml> syntax. ]]></subject>
+		<location>
+			<place>Wrocław, C-3/127</place>
+			<description>Laboratory classroom.</description>
+		</location>
+	</memory>
+	<memory tapeid="21">
+		<media mediaid="21"/>
+		<subdate>Feb 3, 2014</subdate>
+		<subject>Laboratory tasks</subject>
+		<!-- Note donor is missing -->
+		<location>
+			<place>Wrocław, C-3/127</place>
+			<description>Laboratory classroom.</description>
+		</location>
+	</memory>
+</memories>
