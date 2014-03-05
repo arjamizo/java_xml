@@ -1,76 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<department name="Wydział Architektury" establishment-year="1948">
-    <faculty>Architektura i urbanistyka</faculty>
-    <faculty>Gospodarka przestrzenna</faculty>
-</department>
+<university>
+	<department name="Wydział Architektury" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Architektura i urbanistyka</name>
+			</faculty>
+			<faculty>
+				<name>Gospodarka przestrzenna</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Budownictwa Lądowego i Wodnego" establishment-year="1948">
-    <faculty>Budownictwo</faculty>
-</department>
+	<department name="Wydział Budownictwa Lądowego i Wodnego" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Budownictwo</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Chemiczny" establishment-year="1948">
-    <faculty>Biotechnologia</faculty>
-    <faculty>Chemia</faculty>
-    <faculty>Inżynieria chemiczna i procesowa</faculty>
-    <faculty>Inżynieria materiałowa</faculty>
-    <faculty>Technologia chemiczna</faculty>
-</department>
+	<department name="Wydział Chemiczny" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Biotechnologia</name>
+			</faculty>
+			<faculty>
+				<name>Chemia</name>
+			</faculty>
+			<faculty>
+				<name>Inżynieria chemiczna i procesowa</name>
+			</faculty>
+			<faculty>
+				<name>Inżynieria materiałowa</name>
+			</faculty>
+			<faculty>
+				<name>Technologia chemiczna</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Elektroniki" establishment-year="1948">
-    <faculty>Automatyka i robotyka</faculty>
-    <faculty>Elektronika</faculty>
-    <faculty>Telekomunikacja</faculty>
-    <faculty>Informatyka</faculty>
-    <faculty>Teleinformatyka</faculty>
-</department>
+	<department name="Wydział Elektroniki" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Automatyka i robotyka</name>
+			</faculty>
+			<faculty>
+				<name>Elektronika</name>
+			</faculty>
+			<faculty>
+				<name>Telekomunikacja</name>
+			</faculty>
+			<faculty>
+				<name>Informatyka</name>
+				<desc>May be learned either in polish or english.</desc>
+			</faculty>
+			<faculty>
+				<name>Teleinformatyka</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Elektryczny" establishment-year="1948">
-    <faculty>Automatyka i robotyka</faculty>
-    <faculty>Elektrotechnika</faculty>
-    <faculty additional="kierunek międzywydziałowy">Mechatronika</faculty>
-</department>
+	<department name="Wydział Elektryczny" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Automatyka i robotyka</name>
+			</faculty>
+			<faculty>
+				<name>Elektrotechnika</name>
+			</faculty>
+			<faculty additional="kierunek międzywydziałowy">
+				<name>Mechatronika</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Geoinżynierii, Górnictwa i Geologii" establishment-year="1948">
-    <faculty>Geodezja i kartografia</faculty>
-    <faculty>Górnictwo i geologia</faculty>
-</department>
 
-<department name="Wydział Inżynierii Środowiska" establishment-year="1948">
-    <faculty>Inżynieria środowiska</faculty>
-    <faculty>Ochrona środowiska</faculty>
-</department>
+	<department name="Wydział Geoinżynierii, Górnictwa i Geologii" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Geodezja i kartografia</name>
+			</faculty>
+			<faculty>
+				<name>Górnictwo i geologia</name>
+			</faculty>
+		</faculties>
+	</department>
+	<department name="Wydział Inżynierii Środowiska" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Inżynieria środowiska</name>
+			</faculty>
+			<faculty>
+				<name>Ochrona środowiska</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Informatyki i Zarządzania" establishment-year="1948">
-    <faculty>Informatyka</faculty>
-    <faculty>Inżynieria systemów</faculty>
-    <faculty>Zarządzanie</faculty>
-</department>
+	<department name="Wydział Informatyki i Zarządzania" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Informatyka</name>
+			</faculty>
+			<faculty>
+				<name>Inżynieria systemów</name>
+			</faculty>
+			<faculty>
+				<name>Zarządzanie</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Mechaniczno-Energetyczny" establishment-year="1948">
-    <faculty>Energetyka</faculty>
-    <faculty>Mechanika i budowa maszyn</faculty>
-</department>
+	<department name="Wydział Mechaniczno-Energetyczny" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Energetyka</name>
+			</faculty>
+			<faculty>
+				<name>Mechanika i budowa maszyn</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Mechaniczny" establishment-year="1948">
-    <faculty>Automatyka i robotyka</faculty>
-    <faculty>Inżynieria biomedyczna</faculty>
-    <faculty>Mechanika i budowa maszyn</faculty>
-    <faculty additional="kierunek międzywydziałowy">Mechatronika</faculty>
-    <faculty>Transport</faculty>
-    <faculty>Zarządzanie i inżynieria produkcji</faculty>
-</department>
+	<department name="Wydział Mechaniczny" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Automatyka i robotyka</name>
+			</faculty>
+			<faculty>
+				<name>Inżynieria biomedyczna</name>
+			</faculty>
+			<faculty>
+				<name>Mechanika i budowa maszyn</name>
+			</faculty>
+			<faculty additional="kierunek międzywydziałowy">
+				<name>Mechatronika</name>
+			</faculty>
+			<faculty>
+				<name>Transport</name>
+			</faculty>
+			<faculty>
+				<name>Zarządzanie i inżynieria produkcji</name>
+			</faculty>
+		</faculties>
+	</department>
 
-<department name="Wydział Podstawowych Problemów Techniki" establishment-year="1948">
-    <faculty>Fizyka</faculty>
-    <faculty>Fizyka techniczna</faculty>
-    <faculty>Informatyka</faculty>
-    <faculty>Inżynieria biomedyczna</faculty>
-    <faculty>Matematyka</faculty>
-    <faculty>Matematyka stosowana</faculty>
-    <faculty>Optyka</faculty>
-</department>
+	<department name="Wydział Podstawowych Problemów Techniki" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Fizyka</name>
+			</faculty>
+			<faculty>
+				<name>Fizyka techniczna</name>
+			</faculty>
+			<faculty>
+				<name>Informatyka</name>
+			</faculty>
+			<faculty>
+				<name>Inżynieria biomedyczna</name>
+			</faculty>
+			<faculty>
+				<name>Matematyka</name>
+			</faculty>
+			<faculty>
+				<name>Matematyka stosowana</name>
+			</faculty>
+			<faculty>
+				<name>Optyka</name>
+			</faculty> 
+		</faculties>
+	</department>
 
-<department name="Wydział Elektroniki Mikrosystemów i Fotoniki" establishment-year="1948">
-    <faculty>Elektronika i telekomunikacja</faculty>
-    <faculty additional="kierunek międzywydziałowy">Mechatronika</faculty>
-</department>
+	<department name="Wydział Elektroniki Mikrosystemów i Fotoniki" establishment-year="1948">
+		<phone>+713200012</phone>
+		<faculties>
+			<faculty>
+				<name>Elektronika i telekomunikacja</name>
+			</faculty>
+			<faculty additional="kierunek międzywydziałowy">
+				<name>Mechatronika</name>
+			</faculty>
+		</faculties>
+	</department>
+</university>

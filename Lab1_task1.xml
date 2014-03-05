@@ -2,7 +2,7 @@
 <!DOCTYPE employees SYSTEM "Lab1_task5.dtd">
    
 <employees>
-	<employee> 
+	<employee>	
 		<name>Artur</name>
 		<name>Jan</name> 
 		<surname>Nowak</surname>   
@@ -14,7 +14,7 @@
 			<gps coordinates-system="EPEG600613">51,17</gps>
 		</address> 
 	</employee>
-	<employee>
+	<employee> 
 		<name>Juan</name>
 		<surname>Carlos</surname>
 		<surname>De Los Parlotes</surname>

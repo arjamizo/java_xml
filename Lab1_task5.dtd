@@ -1,6 +1,7 @@
 <!ELEMENT employees (employee*) >
-	<!ELEMENT employee (name+, surname+, phone?, address?) >
+	<!ELEMENT employee (name+, nickname?, surname+, phone?, address?) >
 		<!ELEMENT name (#PCDATA) >
+		<!ELEMENT nickname (#PCDATA) >
 		<!ELEMENT surname (#PCDATA) >
 		<!ELEMENT phone (#PCDATA) >
 			<!ATTLIST phone operator CDATA #IMPLIED >
