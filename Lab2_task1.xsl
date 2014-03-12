@@ -12,6 +12,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <th>Name</th>
         <th>Surname</th>
         <th>Phone</th>
+        <th>Color</th>
       </tr>
       <xsl:for-each select="employees/employee">
         <tr>
@@ -26,6 +27,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 		  </td>
 			<td>
 				<xsl:value-of select="phone"/>
+			</td>
+			<td>
+				<xsl:attribute name="style">
+				background-color:<xsl:value-of select="color"/>
+				</xsl:attribute>
 			</td>
         </tr>
       </xsl:for-each>

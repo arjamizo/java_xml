@@ -9,6 +9,7 @@ This document requires running chrome with  - -allow-file-access-from-files para
 		<name>Artur</name>
 		<name>Jan</name> 
 		<surname>Nowak</surname>   
+<color>blue</color>
 		<phone operator="PLAY">123456789</phone>
 		<address type="temporary">
 			<street lang="pl">ul. Ulicowa</street>
@@ -22,6 +23,7 @@ This document requires running chrome with  - -allow-file-access-from-files para
 		<surname>Carlos</surname>
 		<surname>De Los Parlotes</surname>
 		<surname>De Amadeo</surname>
+<color>red</color>
 		<phone operator="UKMOBILE" countryprefix="+44">564785634</phone> <!-- Podajemy prefix kraju w przypadku, jesli ma sie numer w innym kraju -->
 		<address type="permanent residence">
 			<street lang="es">Calle de la Madera</street>
