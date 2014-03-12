@@ -1,7 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 
 <!DOCTYPE employees SYSTEM "Lab1_task4_tv.dtd">
-<?xml-stylesheet href="Lab2_task2.xsl" type="text/xsl" ?>
 
 <TVSCHEDULE NAME="Salem Access Television"> 
   <CHANNEL CHAN="3">

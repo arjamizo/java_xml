@@ -2,9 +2,7 @@
 <!-- 
 This document requires running chrome with  - -allow-file-access-from-files paramter 
 -->
-<!DOCTYPE employees SYSTEM "Lab1_task5.dtd"> 
-<!--<?xml-stylesheet href="Lab2_task1.xsl" type="text/xsl" ?>-->
-<?xml-stylesheet href="Lab2_task3.xsl" type="text/xsl" ?>
+<!DOCTYPE employees SYSTEM "Lab1_task5.dtd">
 <employees>
 	<employee>	
 		<name>Artur</name>
