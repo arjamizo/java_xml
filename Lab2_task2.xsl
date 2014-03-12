@@ -25,16 +25,20 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<xsl:attribute name="rowspan">
 						<xsl:value-of select="count(../../descendant::PROGRAMSLOT)"/>
 					</xsl:attribute>
-					<xsl:value-of select="$pprv" /> VS
-					<xsl:value-of select="$tthis"/>
+					<xsl:value-of select="../../BANNER"/>
+				</td>
+				</xsl:if>
+				<xsl:if test="position()=1 or ./ancestor::DAY/DATE!=../../../descendant::PROGRAMSLOT[$prvpos]/../DATE">
+				<!--http://www.w3schools.com/xpath/xpath_axes.asp-->
+				<td>
+					<xsl:attribute name="rowspan">
+						<xsl:value-of select="count(../descendant::PROGRAMSLOT)"/>
+					</xsl:attribute>
+					<xsl:value-of select="../DATE"/>
 				</td>
 				</xsl:if>
 				<td>
-					<xsl:value-of select="../DATE"/>
-				</td>
-				<td>
-					<xsl:value-of select="./TIME"/>
-					<xsl:value-of select="./TITLE"/>
+					<b><xsl:value-of select="./TIME"/></b>&#160;<xsl:value-of select="./TITLE"/>
 				</td>
 			</tr>
 		</xsl:for-each>
