@@ -34,11 +34,18 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </table>
 	<script src="jquery-1.4.1.min.js"></script>
 	<script>
+	$.extend($.expr[':'], {
+	  'containsi': function(elem, i, match, array)
+	  {
+		return (elem.textContent || elem.innerText || '').toLowerCase()
+		.indexOf((match[3] || "").toLowerCase()) >= 0;
+	  }
+	});
 	 $(document).ready(function() {
 
 		  $("#searchInput").keyup(function(){
 		//hide all the rows
-			  $("table").find("tr").hide();
+			  $("table").find("tr").not(':eq(0)').hide();
 
 		//split the current value of searchInput
 			  var data = this.value.split(" ");
@@ -47,7 +54,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			  
 		//Recusively filter the jquery object to get results.
 			  $.each(data, function(i, v){
-				  jo = jo.filter("*:contains('"+v+"')");
+				  jo = jo.filter("*:containsi('"+v+"')");
 			  });
 			//show the rows that match.
 			  jo.show();
