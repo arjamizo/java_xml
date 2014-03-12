@@ -55,7 +55,7 @@ h1>span {color: gold;}
 					</xsl:if>
 			</xsl:for-each>
 			<tr>
-			<td colspan="2"><button>Send e-mail</button> <button>Add to friends</button></td>
+			<td colspan="2"><button disabled="disabled">Send e-mail</button> <button disabled="disabled">Add to friends</button></td>
 			</tr>
 		</table>
 		</xsl:for-each>

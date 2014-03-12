@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+
+<?xml-stylesheet href="Lab2_task4.xsl" type="text/xsl" ?>
+
+<requests>
+<author>
+<id>3</id>
+<date>12 Mar, 2014</date>
+<name>Jan Kowalski</name>
+<paper-title>Inzynieria odwrotna czegostam</paper-title>
+</author>
+<author>
+<id>33</id>
+<date>12 Mar, 2014</date>
+<name>Janusz Nowak</name>
+<paper-title>Inzynieria postepujaca czegostam</paper-title>
+</author>
+</requests>
