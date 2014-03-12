@@ -13,12 +13,22 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <th>Date</th>
         <th>Hour, title</th>
       </tr>
-      <xsl:for-each select="TVSCHEDULE/CHANNEL">
 		<xsl:for-each select="//PROGRAMSLOT">
+			<xsl:variable name="prvpos" select="position()-1"/>
+			<xsl:variable name="thspos" select="position()"/>
+			<xsl:variable name="pprv"><xsl:value-of select="../../../descendant::PROGRAMSLOT[$prvpos]/../../@CHAN" /></xsl:variable>
+			<xsl:variable name="tthis"><xsl:value-of select="../../../descendant::PROGRAMSLOT[$thspos]/../../@CHAN" /></xsl:variable>
+			
 			<tr>
+				<xsl:if test="position()=1 or $pprv!=$tthis">
 				<td>
-					<xsl:value-of select="../../BANNER"/>
+					<xsl:attribute name="rowspan">
+						<xsl:value-of select="count(../../descendant::PROGRAMSLOT)"/>
+					</xsl:attribute>
+					<xsl:value-of select="$pprv" /> VS
+					<xsl:value-of select="$tthis"/>
 				</td>
+				</xsl:if>
 				<td>
 					<xsl:value-of select="../DATE"/>
 				</td>
@@ -28,7 +38,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 				</td>
 			</tr>
 		</xsl:for-each>
-      </xsl:for-each>
     </table>
   </body>
   </html>
