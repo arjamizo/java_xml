@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.zsk.ict.pwr.wroc.pl/zsk/dyd/did/java_xml/laboratory/lab_3/" elementFormDefault="qualified">
+	<xs:element name="employees">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="employee" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" maxOccurs="unbounded" minOccurs="1"/>
+							<xs:element name="surname" type="xs:string" maxOccurs="unbounded" minOccurs="1"/>
+							<xs:element name="phone" maxOccurs="unbounded" minOccurs="1">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="operator" type="xs:string" use="required"/>
+											<xs:attribute name="countryprefix" type="xs:integer" use="optional"/>
+										</xs:extension>
+									</xs:simpleContent> 
+								</xs:complexType>
+							</xs:element>
+
+
+
+							<xs:element name="address" maxOccurs="unbounded" minOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+														
+										<xs:element name="street" maxOccurs="unbounded" minOccurs="1">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="lang" type="xs:string" use="optional"/>
+													</xs:extension>
+												</xs:simpleContent> 
+											</xs:complexType>
+										</xs:element> 
+										<xs:element name="city" maxOccurs="unbounded" minOccurs="1">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="lang" type="xs:string" use="optional"/>
+													</xs:extension>
+												</xs:simpleContent> 
+											</xs:complexType>
+										</xs:element> 
+										<xs:element name="country" maxOccurs="unbounded" minOccurs="1">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="lang" type="xs:string" use="optional"/>
+													</xs:extension>
+												</xs:simpleContent> 
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="gps" maxOccurs="unbounded" minOccurs="1">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="coordinates-system" type="xs:string" use="optional"/>
+													</xs:extension>
+												</xs:simpleContent> 
+											</xs:complexType>
+										</xs:element>  
+									</xs:sequence>
+														<xs:attribute name="type" type="xs:string" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
