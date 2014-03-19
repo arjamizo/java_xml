@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.zsk.ict.pwr.wroc.pl/zsk/dyd/did/java_xml/laboratory/lab_3/" targetNamespace="http://www.zsk.ict.pwr.wroc.pl/zsk/dyd/did/java_xml/laboratory/lab_3/" elementFormDefault="qualified">
 
-	<xs:complexType name="phone">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="operator" type="xs:string" use="required"/>
-				<xs:attribute name="countryprefix" type="xs:integer" use="optional"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
+	<xs:include schemaLocation="./l3t4_i18n.xsd"/>
 	
-	<xs:complexType name="i18n">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="lang" type="xs:string" use="optional"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:complexType name="localizable">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="coordinates-system" type="xs:string" use="optional"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
+	<xs:include schemaLocation="./l3t4_personalInfo.xsd"/>
 	
-	<xs:complexType name="address">
-		<xs:sequence>
-			<xs:element name="street" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
-			<xs:element name="city" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
-			<xs:element name="country" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
-			<xs:element name="gps" minOccurs="1" maxOccurs="unbounded" type="localizable"/>
-		</xs:sequence>
-		<xs:attribute name="type" type="xs:string" use="optional"/>
-	</xs:complexType>
-								
 	<xs:element name="employees">
 		<xs:complexType>
 			<xs:sequence>
