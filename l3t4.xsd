@@ -24,6 +24,17 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	
+	<xs:complexType name="address">
+		<xs:sequence>
+			<xs:element name="street" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
+			<xs:element name="city" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
+			<xs:element name="country" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
+			<xs:element name="gps" minOccurs="1" maxOccurs="unbounded" type="localizable"/>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string" use="optional"/>
+	</xs:complexType>
+								
 	<xs:element name="employees">
 		<xs:complexType>
 			<xs:sequence>
@@ -33,18 +44,7 @@
 							<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
 							<xs:element name="surname" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
 							<xs:element name="phone" minOccurs="1" maxOccurs="unbounded" type="phone"/>
-							<xs:element name="address" minOccurs="1" maxOccurs="unbounded">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="street" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
-										<xs:element name="city" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
-										<xs:element name="country" minOccurs="1" maxOccurs="unbounded" type="i18n"/>
-										<xs:element name="gps" minOccurs="1" maxOccurs="unbounded" type="localizable">
-										</xs:element>
-									</xs:sequence>
-									<xs:attribute name="type" type="xs:string" use="optional"/>
-								</xs:complexType>
-							</xs:element>
+							<xs:element name="address" minOccurs="1" maxOccurs="unbounded" type="address"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
