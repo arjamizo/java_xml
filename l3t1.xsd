@@ -7,6 +7,15 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="name" type="xs:string" maxOccurs="unbounded" minOccurs="1"/>
+							<xs:element name="state" maxOccurs="unbounded" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="unborn"/>
+										<xs:enumeration value="alive"/>
+										<xs:enumeration value="dead"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
 							<xs:element name="surname" type="xs:string" maxOccurs="unbounded" minOccurs="1"/>
 							<xs:element name="phone" maxOccurs="unbounded" minOccurs="1">
 								<xs:complexType>
