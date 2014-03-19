@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<employees xmlns="http://www.zsk.ict.pwr.wroc.pl/zsk/dyd/did/java_xml/laboratory/lab_3/" 
+<employees 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xsi:schemaLocation="./l3t1.xsd"> 
 	<employee>	 
 		<name>Jan</name>
 		<name>Grześ</name> 
-		<state desc="unborn"></state>
+		<state year="2014"/>
 		<surname>Nowak</surname>   
 		<phone operator="PLAY">600613</phone>
 		<address type="temporary">

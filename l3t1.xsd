@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.zsk.ict.pwr.wroc.pl/zsk/dyd/did/java_xml/laboratory/lab_3/" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xs:attribute name="year">	
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="20[01][1-4]"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
 	<xs:element name="employees">
 		<xs:complexType>
 			<xs:sequence>
@@ -9,11 +17,7 @@
 							<xs:element name="name" type="xs:string" maxOccurs="unbounded" minOccurs="1"/>
 							<xs:element name="state" maxOccurs="unbounded" minOccurs="0">
 								<xs:complexType>
-									<xs:simpleContent>
-										<xs:extension base="xs:string">
-											<xs:attribute name="desc" type="xs:string" use="optional"/>
-										</xs:extension>
-									</xs:simpleContent>
+									<xs:attribute ref="year" use="optional"/>
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="surname" type="xs:string" maxOccurs="unbounded" minOccurs="1"/>
