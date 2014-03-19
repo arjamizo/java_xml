@@ -5,7 +5,7 @@ xsi:schemaLocation="./l3t1.xsd">
 	<employee>	 
 		<name>Jan</name>
 		<name>Grześ</name> 
-		<state>unborn</state>
+		<state desc="unborn"></state>
 		<surname>Nowak</surname>   
 		<phone operator="PLAY">600613</phone>
 		<address type="temporary">
