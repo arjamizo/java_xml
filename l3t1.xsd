@@ -14,6 +14,10 @@
 										<xs:enumeration value="alive"/>
 										<xs:enumeration value="dead"/>
 									</xs:restriction>
+									<!-- 
+									<xs:attribute name="desc" type="xs:string" use="optional"/>
+									http://stackoverflow.com/a/1336100/781312 can not be done. 
+									-->
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="surname" type="xs:string" maxOccurs="unbounded" minOccurs="1"/>
