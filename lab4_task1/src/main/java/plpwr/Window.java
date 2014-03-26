@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import javax.swing.JTextArea;
+import static plpwr.Task2.showDialog;
 
 /**
  *
@@ -88,8 +90,12 @@ public class Window extends JFrame {
         }));
         add(new JButtonFluent().setLabelFluent("Task 4 - prasing XML to CSV").addActionListenerFluent(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                try {
-                    new Task4();
+                try {                    
+                    JTextArea msg = new JTextArea(new Task4().getAns());
+                    msg.setLineWrap(true);
+                    msg.setWrapStyleWord(true);
+
+                    showDialog(null, msg);
                 } catch (Throwable ex) {
                     Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
                     throw new RuntimeException(ex);

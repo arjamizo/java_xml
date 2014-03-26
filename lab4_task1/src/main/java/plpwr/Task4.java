@@ -93,6 +93,8 @@ class Task4 {
             header.add(node.getNodeName());
         }
         System.out.println("header: "+StringUtils.join(header.iterator(), '\t'));
+        StringBuilder sb = new StringBuilder();
+        sb.append(StringUtils.join(header.iterator(), ';'));
 //        for (Node node : nodes) {
         for (int i = 0; i < nodes.getLength(); i++) {
 //            System.out.println(nodes.item(i).getNodeName());
@@ -109,8 +111,21 @@ class Task4 {
                 row.add(content);
             }
             System.out.println("\nrow:\t"+StringUtils.join(row.iterator(),'\t'));
+            sb.append(StringUtils.join(row.iterator(),'\t'));
         }
+        setAns(sb.toString());
+        
     }
+    private String ans;
+
+    public String getAns() {
+        return ans;
+    }
+
+    public void setAns(String ans) {
+        this.ans = ans;
+    }
+
     
     public static void main(String data[]) throws Throwable {
         new Task4();
