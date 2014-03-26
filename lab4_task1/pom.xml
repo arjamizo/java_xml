@@ -33,7 +33,7 @@
                             <configuration>
                                     <archive>
                                             <manifest>
-                                                    <mainClass>plpwr.App</mainClass>
+                                                    <mainClass>plpwr.Window</mainClass>
                                             </manifest>
                                     </archive>
                             </configuration>
