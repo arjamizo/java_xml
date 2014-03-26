@@ -1,6 +1,7 @@
 package plpwr;
 
 import java.io.File;
+import java.io.StringWriter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -48,6 +49,9 @@ public class App
 		transformer.transform(source, result);
 		transformer.transform(source, new StreamResult(System.out));
                 
+                StringWriter writer = new StringWriter();
+		transformer.transform(source, new StreamResult(writer));
+                javax.swing.JOptionPane.showMessageDialog(null, writer.toString());
  
 		System.out.println("\nFile saved!");
  
