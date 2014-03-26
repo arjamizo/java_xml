@@ -14,12 +14,15 @@ import java.util.List;
 import java.io.FileReader;
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.Arrays;
 import javax.swing.JTextArea;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.apache.commons.lang.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import plpwr.DocumentWrapper.ElementWrapper;
 import static plpwr.Task2.showDialog;
 
 /**
@@ -34,7 +37,8 @@ class Task3 {
     public Task3() throws Throwable {
         Reader filereader;
         try {
-            File[] files = new Task2.FileDialogFluent(Window.getWindow(), "Choose file", FileDialog.LOAD).setVisibleFluent(true).getFiles();
+            File[] files = {}; 
+//            files= new Task2.FileDialogFluent(Window.getWindow(), "Choose file", FileDialog.LOAD).setVisibleFluent(true).getFiles();
             File file=files[0];
             filereader = new FileReader(file);
         } catch (Throwable t) {
@@ -62,7 +66,10 @@ class Task3 {
         for (String[] row : rows) {
             Element e=doc.createElement("employee");
             for (int i = 0; i < row.length; i++) {
-                e.setAttribute(header[i], row[i]);
+                System.out.println("ROW"+row[i]);
+                Element a = doc.createElement(header[i]);
+                a.appendChild(doc.createTextNode(row[i]));
+                e.appendChild(a);
             }
             el.appendChild(e);
         }

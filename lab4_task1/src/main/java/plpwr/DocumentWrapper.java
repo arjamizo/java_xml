@@ -44,6 +44,17 @@ class DocumentWrapper {
             element.setAttribute(author, sb_from_Pwr);
             return element;
         }
+        Element addTextNode(Document doc, String tagName, String tagText) {
+//            Element elem = doc.createElement(tagName);
+//            elem.setNodeValue(tagText);
+//            getElement().appendChild(elem);
+//            Element e=doc.createTextNode(tagName);
+//            e.setAttribute("hi", tagText);
+//            Node a=doc.createTextNode(tagText);
+//            e.appendChild(a);
+//            getElement().appendChild(e);
+            return element;
+        }
     }
     
 }
