@@ -19,6 +19,7 @@ import javax.swing.SwingUtilities;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 /**
  *
@@ -32,12 +33,13 @@ class Task2 {
         DocumentBuilder db = dbf.newDocumentBuilder();
         File[] files = new FileDialogFluent(Window.getWindow(), "Choose file", FileDialog.LOAD).setVisibleFluent(true).getFiles();
         Document document = db.parse(files[0]);
+        
+        modifyDocument(document);
 
         JTextArea msg = new JTextArea(App.formatDocument(document));
         msg.setLineWrap(true);
         msg.setWrapStyleWord(true);
 
-//        javax.swing.JOptionPane.showMessageDialog(null, scrollPane);
         showDialog(null, msg);
     }
 
@@ -62,8 +64,17 @@ class Task2 {
                 }
             }
         });
-        // display them in a message dialog
         JOptionPane.showMessageDialog(frame, scrollPane);
+    }
+
+    private void modifyDocument(Document document) {
+        Element element = (Element) document.getChildNodes().item(0);
+        element.getParentNode().removeChild(element);
+        
+        ((Element)element).setNodeValue("NEW VALUE!");
+        document.appendChild(element);
+        
+        ((Element)document.getChildNodes().item(0)).appendChild(new DocumentWrapper(document).createElement("book").setAttribute("author", "sb from Pwr"));
     }
 
     private static class FileDialogFluent extends FileDialog {

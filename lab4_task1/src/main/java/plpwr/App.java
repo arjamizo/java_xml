@@ -10,6 +10,7 @@ import java.io.Writer;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -52,6 +53,7 @@ public class App
 		DOMSource source = new DOMSource(doc);
 		StreamResult result = new StreamResult(new File("file.xml"));
                 
+                transformer.setOutputProperty(OutputKeys.INDENT, "yes"); //other way of beautifying from http://examples.javacodegeeks.com/core-java/xml/dom/remove-node-from-dom-document/
 		transformer.transform(source, result);
 		transformer.transform(source, new StreamResult(System.out));
                 
