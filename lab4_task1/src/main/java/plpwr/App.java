@@ -3,6 +3,7 @@ package plpwr;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.File;
+import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -72,6 +73,10 @@ public class App
         DocumentBuilder db = dbf.newDocumentBuilder();
         InputSource is = new InputSource(new StringReader(in));
         Document document = db.parse(is);
+        return formatDocument(document);
+    }
+
+    protected static String formatDocument(Document document) throws IOException {
         OutputFormat format = new OutputFormat(document);
         format.setLineWidth(65);
         format.setIndenting(true);
