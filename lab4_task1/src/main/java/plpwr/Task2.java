@@ -37,9 +37,33 @@ class Task2 {
         msg.setLineWrap(true);
         msg.setWrapStyleWord(true);
 
-        JScrollPane scrollPane = new JScrollPane(msg);
+//        javax.swing.JOptionPane.showMessageDialog(null, scrollPane);
+        showDialog(null, msg);
+    }
 
-        javax.swing.JOptionPane.showMessageDialog(null, scrollPane);
+    /**
+     * @link http://benohead.com/java-make-joptionpane-dialog-resizable/
+     *
+     * @param frame
+     * @param component
+     */
+    private void showDialog(Component frame, final Component component) {
+        // wrap a scrollpane around the component
+        JScrollPane scrollPane = new JScrollPane(component);
+        // make the dialog resizable
+        component.addHierarchyListener(new HierarchyListener() {
+            public void hierarchyChanged(HierarchyEvent e) {
+                java.awt.Window window = SwingUtilities.getWindowAncestor(component);
+                if (window instanceof Dialog) {
+                    Dialog dialog = (Dialog) window;
+                    if (!dialog.isResizable()) {
+                        dialog.setResizable(true);
+                    }
+                }
+            }
+        });
+        // display them in a message dialog
+        JOptionPane.showMessageDialog(frame, scrollPane);
     }
 
     private static class FileDialogFluent extends FileDialog {
