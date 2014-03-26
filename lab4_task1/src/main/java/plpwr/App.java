@@ -45,6 +45,10 @@ public class App
                 course.setAttribute("Name", "Application programming - Java and XML technologies");
                 course.setAttribute("Author", "Artur");
 		rootElement.appendChild(course);
+                Element person = doc.createElement("Person");
+                
+                person.appendChild(doc.createTextNode("student#1"));
+                course.appendChild(person);
                 
                 course.appendChild(doc.createElement("Topics"));
  
