@@ -49,7 +49,7 @@ class Task2 {
      * @param frame
      * @param component
      */
-    private void showDialog(Component frame, final Component component) {
+    public static void showDialog(Component frame, final Component component) {
         // wrap a scrollpane around the component
         JScrollPane scrollPane = new JScrollPane(component);
         // make the dialog resizable
@@ -77,7 +77,7 @@ class Task2 {
         ((Element)document.getChildNodes().item(0)).appendChild(new DocumentWrapper(document).createElement("book").setAttribute("author", "sb from Pwr"));
     }
 
-    private static class FileDialogFluent extends FileDialog {
+    public static class FileDialogFluent extends FileDialog {
 
         public FileDialogFluent(JFrame window, String hehe, int LOAD) {
             super(window, hehe, LOAD);

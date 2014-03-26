@@ -76,6 +76,16 @@ public class Window extends JFrame {
                 }
             }
         }));
+        add(new JButtonFluent().setLabelFluent("Task 3 - prasing CSV").addActionListenerFluent(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    new Task3();
+                } catch (Throwable ex) {
+                    Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+                    throw new RuntimeException(ex);
+                }
+            }
+        }));
     }
     
     public static void main(String data[]) {
