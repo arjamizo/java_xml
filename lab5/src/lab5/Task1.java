@@ -49,21 +49,7 @@ class SAXHandler extends DefaultHandler {
     @Override
     public void characters(char ch[], int start, int length) {
         if(!inpos) return;
-        for (int i = start; i < start + length; i++) {
-            switch (ch[i]) {
-                case '\n':
-//                    System.out.print("\\n");
-                    break;
-                case '\t':
-//                    System.out.print("\\t");
-                    break;
-                default:
-                    System.out.print(ch[i]);
-                    break;
-            }
-        }
-        System.out.print(": "+tmp);
-        System.out.println();
+        System.out.println(new String(ch, start, length)+": "+tmp);
     }
 }
 
