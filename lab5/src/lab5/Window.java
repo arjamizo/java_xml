@@ -41,6 +41,7 @@ public class Window extends javax.swing.JPanel implements ActionListener {
         int id = Integer.parseInt(m.group(1));
         System.out.println(id);
         try {
+            if(id==1) new Task1();
         } catch (Throwable ex) {
             throw new RuntimeException(ex);
         }
