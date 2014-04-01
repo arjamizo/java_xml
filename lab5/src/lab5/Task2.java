@@ -47,20 +47,26 @@ class SAXHandler extends DefaultHandler {
     @Override
     public void startElement(String namespaceURI, String localName, String rawName, org.xml.sax.Attributes atts) {
         in++;
-        out.println("Start tag:" + localName);
+        out.println(indentation()+"Start tag:" + localName);
     }
 
     @Override
     public void endElement(String namespaceURI, String localName, String rawName) {
-        out.println("End tag: " + localName);
+        out.println(indentation()+"End tag: " + localName);
         in--;
     }
 
     @Override
     public void characters(char ch[], int start, int length) {
+        in++;
         if(new String(ch, start, length).trim().length()>0)
-            out.println(new String(ch, start, length));
+            out.println(indentation()+new String(ch, start, length));
+        in--;
     }
+
+        protected String indentation() {
+            return new String(new char [in]).replaceAll(".", "    ");
+        }
     }
     static public void main(String data[]) throws Throwable {
         new Task2();
