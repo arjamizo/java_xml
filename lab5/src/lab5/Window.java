@@ -42,6 +42,7 @@ public class Window extends javax.swing.JPanel implements ActionListener {
         System.out.println(id);
         try {
             if(id==1) new Task1();
+            if(id==2) new Task2();
         } catch (Throwable ex) {
             throw new RuntimeException(ex);
         }
