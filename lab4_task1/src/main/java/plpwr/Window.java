@@ -102,6 +102,20 @@ public class Window extends JFrame {
                 }
             }
         }));
+        add(new JButtonFluent().setLabelFluent("Task 5 - validating XML against DTD").addActionListenerFluent(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {                    
+                    JTextArea msg = new JTextArea(new Task5().getAns());
+                    msg.setLineWrap(true);
+                    msg.setWrapStyleWord(true);
+
+                    showDialog(null, msg);
+                } catch (Throwable ex) {
+                    Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+                    throw new RuntimeException(ex);
+                }
+            }
+        }));
     }
     
     public static void main(String data[]) {
