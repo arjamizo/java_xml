@@ -15,14 +15,17 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamReader;
-import javax.xml.stream.events.XMLEvent;
-import org.jfree.chart.*;
-import org.jfree.data.general.*;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -40,6 +43,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 
 public class Task4 {
+
 
     private interface AvrgCouter {
 //        AvrgCouter(String filename);
@@ -223,6 +227,7 @@ public class Task4 {
         PrintStream out = new PrintStream(os);
         for (int i = 0; i < 10; i++) {
             int cnt=1<<i;
+            writeRandomColors(cnt, "colors.xml");
             DOMParse dom = new DOMParse();
             SAXHandler sax = new SAXHandler();
             StAX stax = new StAX();
@@ -235,4 +240,30 @@ public class Task4 {
         JOptionPane.showMessageDialog(null, os.toString());
     }
     
+    private void writeRandomColors(int cnt, String filename) throws Throwable {
+        Random generator = new Random(); 
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+
+        //root elements
+        Document doc = docBuilder.newDocument();
+
+        Element rootElement = doc.createElement("values");
+        doc.appendChild(rootElement);
+
+        for (int i = 0; i < cnt; i++) {
+            Element colorValue = doc.createElement("value");
+            int r = generator.nextInt(255) + 0;
+            colorValue.setAttribute("color", new String[]{"red","green","blue"}[generator.nextInt(3)]);
+            colorValue.setTextContent(Integer.toString(r));
+            rootElement.appendChild(colorValue);
+        }
+        
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+
+        StreamResult result =  new StreamResult(new File(filename));
+        transformer.transform(source, result);
+    }
 }
