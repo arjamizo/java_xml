@@ -21,6 +21,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.events.XMLEvent;
+import org.jfree.chart.*;
+import org.jfree.data.general.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -210,16 +212,27 @@ public class Task4 {
 
     }
     static public void main(String data[]) throws Throwable {
-        new Task4();
+        new Task4(null);
     }
-    
-    public Task4() throws Throwable {
+    public static interface CallbbackNewMeasure {
+        public void newMeasure(int n, long dom,  long sax, long stax);
+    }
+    CallbbackNewMeasure cb = null;
+    public Task4(CallbbackNewMeasure cb) throws Throwable {
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        PrintStream out = new PrintStream(os);
+        for (int i = 0; i < 10; i++) {
+            int cnt=1<<i;
             DOMParse dom = new DOMParse();
             SAXHandler sax = new SAXHandler();
             StAX stax = new StAX();
             String ansrs[] = new String[] {dom.getAns(), sax.getAns(), stax.getAns()};
             long times[]=new long[]{dom.getTime(), sax.getTime(), stax.getTime()};
-            JOptionPane.showMessageDialog(null, Arrays.toString(ansrs)+" \n"+Arrays.toString(times));
+            if(cb!=null) 
+                cb.newMeasure(cnt, times[0], times[1], times[2]);
+            out.println(cnt +": "+ Arrays.toString(ansrs)+" \n"+Arrays.toString(times));
+            }
+        JOptionPane.showMessageDialog(null, os.toString());
     }
     
 }

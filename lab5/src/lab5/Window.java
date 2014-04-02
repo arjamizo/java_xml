@@ -12,16 +12,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import org.jfree.chart.*;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.general.AbstractDataset;
+import org.jfree.data.general.DatasetGroup;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.xy.CategoryTableXYDataset;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 
 /**
  *
  * @author azochniak
  */
 public class Window extends javax.swing.JPanel implements ActionListener {
-
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         Window win = new Window();
+//        frame.add(pane);
         frame.add(win);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -44,7 +53,18 @@ public class Window extends javax.swing.JPanel implements ActionListener {
             if(id==1) new Task1();
             if(id==2) new Task2();
             if(id==3) new Task3();
-            if(id==4) new Task4();
+            if(id==4) {
+                new Task4(new Task4.CallbbackNewMeasure() {
+
+                    @Override
+                    public void newMeasure(int n, long dom, long sax, long stax) {
+                        series[0].add(n, dom);
+                        series[1].add(n, sax);
+                        series[2].add(n, stax);
+                    }
+                });
+                showChart(this);
+            }
         } catch (Throwable ex) {
             throw new RuntimeException(ex);
         }
@@ -53,8 +73,32 @@ public class Window extends javax.swing.JPanel implements ActionListener {
     /**
      * Creates new form Window
      */
+    XYSeries series[] = new XYSeries[]{
+     new XYSeries("DOM")
+    , new XYSeries("SAX")
+    , new XYSeries("StAX")};
+    XYSeriesCollection dataset = new XYSeriesCollection();
     public Window() {
         initComponents();
+        dataset.addSeries(series[0]);
+        dataset.addSeries(series[1]);
+        dataset.addSeries(series[2]);
+    }
+    
+    public void showChart(Window win) {
+        final JFreeChart chart = ChartFactory.createXYLineChart(
+            "DOM, SAX, StAX parsing time",      // chart title
+            "number of XML nodes",                      // x axis label
+            "time [ms]",                      // y axis label
+            win.dataset,                  // data
+            PlotOrientation.VERTICAL,
+            true,                     // include legend
+            true,                     // tooltips
+            false                     // urls
+        );
+        ChartFrame pane = new ChartFrame("ELO",chart);
+        pane.pack();
+        pane.setVisible(true);
     }
 
     /**
