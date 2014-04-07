@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package lab5;
+package pwr.lab5;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

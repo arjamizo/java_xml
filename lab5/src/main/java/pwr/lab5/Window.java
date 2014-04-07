@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package lab5;
+package pwr.lab5;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
@@ -28,17 +29,21 @@ import org.jfree.data.xy.XYSeriesCollection;
  */
 public class Window extends javax.swing.JPanel implements ActionListener {
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        Window win = new Window();
-//        frame.add(pane);
-        frame.add(win);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.pack();
-        
-        JButton tab[] = new JButton[]{win.jButton1,win.jButton2,win.jButton3,win.jButton4,win.jButton5};
-        for (JButton jb : tab) {
-            jb.addActionListener(win);
+        try {
+            JFrame frame = new JFrame();
+            Window win = new Window();
+    //        frame.add(pane);
+            frame.add(win);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            frame.pack();
+
+            JButton tab[] = new JButton[]{win.jButton1,win.jButton2,win.jButton3,win.jButton4,win.jButton5};
+            for (JButton jb : tab) {
+                jb.addActionListener(win);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
     @Override
@@ -66,6 +71,7 @@ public class Window extends javax.swing.JPanel implements ActionListener {
                 showChart(this);
             }
         } catch (Throwable ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
             throw new RuntimeException(ex);
         }
     }

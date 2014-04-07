@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package lab5;
+package pwr.lab5;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.swing.JOptionPane;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -91,7 +92,9 @@ public class Task1 {
         parser.setContentHandler(handler);
         InputSource source = new InputSource(new InputStreamReader(new FileInputStream(new File("chess.xml"))));
         parser.parse(source);
-        System.out.println("Following paws are missing for white player: \n" + handler.whatIsMissing());
+        String ans;
+        System.out.println(ans="Following paws are missing for white player: \n" + handler.whatIsMissing());
+        JOptionPane.showMessageDialog(null, ans);
     }
     
 }
