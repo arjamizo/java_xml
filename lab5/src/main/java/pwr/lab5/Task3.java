@@ -62,7 +62,7 @@ class SAXHandler extends DefaultHandler {
     
     boolean inelem=false,append=false;
     String thistag;
-    List<User> users = new ArrayList<>();
+    List<User> users = new ArrayList();
     Set<String> important = new HashSet(Arrays.asList(new String[]{"name","surname","phone"}));
     @Override
     public void startElement(String namespaceURI, String localName, String rawName, org.xml.sax.Attributes atts) {

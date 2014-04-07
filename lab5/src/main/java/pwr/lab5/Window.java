@@ -8,6 +8,8 @@ package pwr.lab5;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JButton;
@@ -54,6 +56,16 @@ public class Window extends javax.swing.JPanel implements ActionListener {
         System.out.println(str);
         int id = Integer.parseInt(m.group(1));
         System.out.println(id);
+//        String backup=System.getProperty("user.dir");
+//        String progDir = (new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath())).getAbsolutePath();
+//        try{
+//            System.setProperty("user.dir", progDir);
+//            File f=new File("./chess.xml");
+//            if(!f.exists()) 
+//                throw new FileNotFoundException("could not find chess.xml");
+//        } catch (Exception ex) {
+//            System.setProperty("user.dir", backup);
+//        }
         try {
             if(id==1) new Task1();
             if(id==2) new Task2();
@@ -71,7 +83,7 @@ public class Window extends javax.swing.JPanel implements ActionListener {
                 showChart(this);
             }
         } catch (Throwable ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage()+"\nCWD: "+System.getProperty("user.dir")+"\nIn case of problems with accessing files, try running from console: java -jar *.jar");
             throw new RuntimeException(ex);
         }
     }

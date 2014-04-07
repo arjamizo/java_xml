@@ -1,0 +1,20 @@
+<!ELEMENT employees (employee*) >
+	<!ELEMENT employee (name+, nickname?, surname+, phone?, address?) >
+		<!ELEMENT name (#PCDATA) >
+		<!ELEMENT nickname (#PCDATA) >
+		<!ELEMENT surname (#PCDATA) >
+		<!ELEMENT phone (#PCDATA) >
+			<!ATTLIST phone operator CDATA #IMPLIED >
+			<!ATTLIST phone countryprefix CDATA #IMPLIED >
+		<!ELEMENT address (street+, city+, country+, gps?) >
+			<!ATTLIST address type CDATA #IMPLIED  >
+			<!ELEMENT street (#PCDATA) >
+			<!ATTLIST street lang CDATA #IMPLIED  >
+			<!ELEMENT city (#PCDATA) >
+			<!ATTLIST city lang CDATA #IMPLIED  >
+			<!ELEMENT street (#PCDATA) >
+			<!ATTLIST street lang CDATA #IMPLIED >
+			<!ELEMENT country (#PCDATA) >
+			<!ATTLIST country lang CDATA #IMPLIED >
+			<!ELEMENT gps (#PCDATA) >
+			<!ATTLIST gps coordinates-system CDATA #IMPLIED >

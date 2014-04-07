@@ -61,7 +61,7 @@ class SAXHandler extends DefaultHandler {
     }
     
     public List<String> whatIsMissing() {
-        List<String> fullSet=new ArrayList<>();
+        List<String> fullSet=new ArrayList();
         fullSet.add("White king");
         fullSet.add("White queen");
         fullSet.add("White rook");
@@ -90,6 +90,7 @@ public class Task1 {
         XMLReader parser = XMLReaderFactory.createXMLReader();
         SAXHandler handler = new SAXHandler();
         parser.setContentHandler(handler);
+        //System.getProperty("user.dir")
         InputSource source = new InputSource(new InputStreamReader(new FileInputStream(new File("chess.xml"))));
         parser.parse(source);
         String ans;
