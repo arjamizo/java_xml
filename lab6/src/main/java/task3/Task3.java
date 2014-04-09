@@ -6,7 +6,10 @@
 
 package task3;
 
+import com.google.common.collect.Ordering;
+import com.google.common.primitives.*;
 import java.io.File;
+import java.util.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import task3.book.Catalog;
@@ -26,5 +29,16 @@ public class Task3 {
         for (Book pos : xdml.getBook()) {
             System.out.println(pos.getAuthor()+" "+pos.getTitle());
         }
+        System.out.println("Max elem="+getMaxPrice(xdml.getBook()));
+    }
+    
+    static Book getMaxPrice(List<Book> books) {
+        Ordering<Book> o = new Ordering<Book>() {
+            @Override
+            public int compare(Book left, Book right) {
+                return Floats.compare(left.getPrice(), right.getPrice());
+            }
+        };
+        return o.max(books);
     }
 }
