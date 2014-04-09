@@ -85,6 +85,7 @@ public class Window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(baos);
         PrintStream old = System.out;
@@ -94,16 +95,19 @@ public class Window extends javax.swing.JFrame {
         int i = Integer.parseInt(m.group(2));
 //        System.out.println("id="+i);
         System.setOut(ps);
-        try {
-            Object tasks[]={new Task1(), new Task2(), new Task3()};
-            tasks[i-1].getClass().getMethod("main", new String[]{}.getClass()).invoke(tasks[i-1], new Object[]{null});
-        } catch (Throwable ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException(ex);
-        }
+        Object tasks[]={new Task1(), new Task2(), new Task3()};
+        tasks[i-1].getClass().getMethod("main", new String[]{}.getClass()).invoke(tasks[i-1], new Object[]{null});
         System.out.flush();
         System.setOut(old);
         JOptionPane.showMessageDialog(null, baos.toString());
+        } catch  (Throwable ex) {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            PrintStream ps = new PrintStream(baos);
+            ps.println("Error: "+ ex + " \ncause for this ex: " + ex.getCause() + " \nCWD: "+System.getProperty("user.dir"));
+            ps.println();
+            ex.printStackTrace(ps);
+            JOptionPane.showMessageDialog(null, baos.toString());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
