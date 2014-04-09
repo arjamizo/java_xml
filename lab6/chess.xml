@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ChessBoard>
+    <pos id="G1">White king</pos>
+    <pos id="D6">White bishop</pos>
+    <pos id="E1">Black rook</pos>
+</ChessBoard>
