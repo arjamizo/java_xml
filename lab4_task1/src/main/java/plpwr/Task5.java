@@ -125,7 +125,7 @@ public class SimpleErrorHandler implements ErrorHandler {
 //            return "dtd.dtd";
             throw new RuntimeException("should  not be used");
         } else if (title.equals("select xml")) {
-            return "../Lab1_task1.xml";
+            return "Lab1_task1.xml";
 //            return "xml.xml";
         } else
             throw new RuntimeException("wrong title");
