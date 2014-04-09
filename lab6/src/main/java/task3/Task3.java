@@ -34,6 +34,7 @@ public class Task3 {
         }
         System.out.println("Max elem="+getMaxPrice(xdml.getBook()));
         System.out.println("Avrg price="+getAvrgPrice(xdml.getBook()));
+        System.out.println("Avrg price="+getOldestBook(xdml.getBook()));
     }
     
     static Book getMaxPrice(List<Book> books) {
@@ -46,6 +47,7 @@ public class Task3 {
         return o.max(books);
     }
 
+    //http://www.leveluplunch.com/java/examples/calculate-average-of-array/}
     private static float getAvrgPrice(List<Book> books) {
         List<Float> list=new ArrayList<Float>();
         for (Book book : books) {
@@ -53,5 +55,13 @@ public class Task3 {
         }
         return new Float(DoubleMath.mean(list));
     }
-//        http://www.leveluplunch.com/java/examples/calculate-average-of-array/}
+    private static Book getOldestBook(List<Book> books) {
+        Ordering<Book> o = new Ordering<Book>() {
+            @Override
+            public int compare(Book left, Book right) {
+                return left.getPublishDate().compare(right.getPublishDate());
+            }
+        };
+        return o.min(books);
+    }
 }
