@@ -38,6 +38,7 @@ public class Task3 {
                 return (t.getGenre().contains("Fan"));
             }
         });
+        xdml.getBook().get(0).setAuthor("Jarne Stroustrup");
         for (Book pos : xdml.getBook()) {
             System.out.println(pos.getAuthor()+" "+pos.getTitle());
         }

@@ -35,6 +35,10 @@ public class Task2 {
             f.setPrice(randInt(100, 10000)/1.0f);
             menu.getFood().add(f);
         }
+        Food f = new Food();
+        f.setName("makaron");
+        f.setPrice(13.37f);
+        menu.getFood().add(f);
         
         marshaller.marshal(menu,new FileOutputStream("/tmp/output.xml"));
         
