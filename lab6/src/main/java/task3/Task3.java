@@ -7,6 +7,8 @@
 package task3;
 
 import com.google.common.base.Function;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.google.common.math.DoubleMath;
@@ -29,6 +31,13 @@ public class Task3 {
         JAXBContext jc = JAXBContext.newInstance("task3.book" );
         Unmarshaller unmarshaller = jc.createUnmarshaller();
         Catalog xdml = (Catalog)unmarshaller.unmarshal(new File("Book.xml"));
+        xdml.getBook().remove(xdml.getBook().get(0));
+        Iterables.removeIf(xdml.getBook(), new Predicate<Book>() {
+
+            public boolean apply(Book t) {
+                return (t.getGenre().contains("Fan"));
+            }
+        });
         for (Book pos : xdml.getBook()) {
             System.out.println(pos.getAuthor()+" "+pos.getTitle());
         }
