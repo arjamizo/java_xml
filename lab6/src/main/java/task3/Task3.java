@@ -6,7 +6,10 @@
 
 package task3;
 
+import com.google.common.base.Function;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
+import com.google.common.math.DoubleMath;
 import com.google.common.primitives.*;
 import java.io.File;
 import java.util.*;
@@ -30,6 +33,7 @@ public class Task3 {
             System.out.println(pos.getAuthor()+" "+pos.getTitle());
         }
         System.out.println("Max elem="+getMaxPrice(xdml.getBook()));
+        System.out.println("Avrg price="+getAvrgPrice(xdml.getBook()));
     }
     
     static Book getMaxPrice(List<Book> books) {
@@ -41,4 +45,13 @@ public class Task3 {
         };
         return o.max(books);
     }
+
+    private static float getAvrgPrice(List<Book> books) {
+        List<Float> list=new ArrayList<Float>();
+        for (Book book : books) {
+            list.add(book.getPrice());
+        }
+        return new Float(DoubleMath.mean(list));
+    }
+//        http://www.leveluplunch.com/java/examples/calculate-average-of-array/}
 }
