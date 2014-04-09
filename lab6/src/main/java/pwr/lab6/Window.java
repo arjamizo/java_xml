@@ -10,6 +10,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import task2.Task2;
 import task3.Task3;
@@ -25,6 +27,8 @@ public class Window extends javax.swing.JFrame {
      */
     public Window() {
         initComponents();
+        jButton2.addActionListener(jButton1.getActionListeners()[0]);
+        jButton3.addActionListener(jButton1.getActionListeners()[0]);
     }
 
     /**
@@ -84,9 +88,15 @@ public class Window extends javax.swing.JFrame {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(baos);
         PrintStream old = System.out;
+        String str = ((javax.swing.JButton)evt.getSource()).getText();
+        Matcher m = Pattern.compile("(text=.*?)?(\\d+)").matcher(str);
+        m.find();
+        int i = Integer.parseInt(m.group(2));
+//        System.out.println("id="+i);
         System.setOut(ps);
         try {
-            Task1.main(null);
+            Object tasks[]={new Task1(), new Task2(), new Task3()};
+            tasks[i-1].getClass().getMethod("main", new String[]{}.getClass()).invoke(tasks[i-1], new Object[]{null});
         } catch (Throwable ex) {
             Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException(ex);
