@@ -145,6 +145,11 @@ public class Catalog {
         @XmlAttribute(name = "id")
         protected String id;
 
+        @Override
+        public String toString() {
+            return "Book{" + "author=" + author + ", title=" + title + ", genre=" + genre + ", price=" + price + ", publishDate=" + publishDate + ", description=" + description + ", id=" + id + '}';
+        }
+
         /**
          * Gets the value of the author property.
          * 
