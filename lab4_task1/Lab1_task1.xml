@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This document requires running chrome with  - -allow-file-access-from-files paramter 
+-->
+<!DOCTYPE employees SYSTEM "Lab1_task5.dtd">
+<employees>
+	<employee>	
+		<name>Jan</name>
+		<name>Michał</name> 
+		<surname>Nowak</surname>   
+		<phone operator="PLAY">04823232323</phone>
+		<address type="temporary">
+			<street lang="pl">Wrocławska</street>
+			<city>Wrocław</city> 
+			<country>Poland</country>
+			<gps coordinates-system="EPEG600613">51,17</gps>
+		</address> 
+	</employee>
+	<employee> 
+		<name>Juan</name>
+		<surname>Carlos</surname>
+		<surname>De Los Parlotes</surname>
+		<surname>De Amadeo</surname>
+		<phone operator="UKMOBILE" countryprefix="+44">564785634</phone> <!-- Podajemy prefix kraju w przypadku, jesli ma sie numer w innym kraju -->
+		<address type="permanent residence">
+			<street lang="es">Calle de la Madera</street>
+			<street lang="pl">ul. Drewniana</street>
+			<city lang="es">Madrid</city>
+			<city lang="pl">Madryt</city>
+			<country lang="es">Espana</country>
+			<country lang="pl">Hiszpania</country>
+			<country lang="en">Spain</country>
+			<gps coordinates-system="EEPG4654">40.4235066,-3.7043417</gps>
+		</address>
+
+	</employee>
+</employees>
